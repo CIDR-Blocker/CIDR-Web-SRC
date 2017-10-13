@@ -3,11 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Buefy from 'buefy'
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
+import 'bulma/css/bulma.css'
+import 'buefy/lib/buefy.css'
+import 'font-awesome/css/font-awesome.css'
+import 'animate.css/animate.css'
 
-Vue.use(ElementUI)
+Vue.use(Buefy, {
+  defaultIconPack: 'fa'
+})
 
 Vue.config.productionTip = false
 
@@ -15,7 +20,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  render: h => h(App),
   template: '<App/>',
   components: { App }
 })
