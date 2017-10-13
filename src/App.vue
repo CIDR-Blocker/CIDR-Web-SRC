@@ -1,20 +1,57 @@
 <template>
   <div id="app">
-    <el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal">
-      <el-menu-item index="1">Processing Center</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">Workspace</template>
-        <el-menu-item index="2-1">item one</el-menu-item>
-        <el-menu-item index="2-2">item two</el-menu-item>
-        <el-menu-item index="2-3">item three</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
-    </el-menu>
+    <div class="container">
+      <nav class="navbar is-transparent" role="navigation" aria-label="Main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href=".">
+            <img src="../static/favicon/favicon.png" />
+          </a>
+          <button class="button navbar-burger" @click="navMenuActive = !navMenuActive">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="navbar-menu" :class="{'is-active': navMenuActive}">
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">Doc</a>
+              <div class="navbar-dropdown is-boxed">
+                <router-link :to="{ name: 'Doc/Installation', params: {} }" class="navbar-item" exact-active-class="is-active">Installation</router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <keep-alive><router-view></router-view></keep-alive>
+        </div>
+      </div>
+      <div class="hero-footer">
+        <div class="container">
+          <div class="tabs is-centered">
+            <ul>
+              <li>
+                Made by RumbleFrog
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'app'
+export default {
+  name: 'app',
+  data () {
+    return {
+      navMenuActive: false
+    }
   }
+}
 </script>
