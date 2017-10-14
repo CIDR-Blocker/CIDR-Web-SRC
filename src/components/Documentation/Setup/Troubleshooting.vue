@@ -7,6 +7,75 @@
           <p class="card-header-title">
             <b-taglist attached>
               <b-tag type="is-primary">Sourcemod</b-tag>
+              <b-tag type="is-dark">Database failure: Could not find database conf "cidr_blocker"</b-tag>
+            </b-taglist>
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p>
+              You either forgot to add a <code>cidr_blocker</code> section in your <code>databases.cfg</code> or the section is invalid, causing parsing error.
+            </p>
+
+            <b-collapse :open="false">
+              <button class="button is-primary" slot="trigger">databases.cfg Example</button>
+              <pre>
+  "Databases"
+  {
+  	"driver_default"		"mysql"
+
+  	// When specifying "host", you may use an IP address, a hostname, or a socket file path
+
+  	"default"
+  	{
+  		"driver"			"default"
+  		"host"				"DATABASE_HOST"
+  		"database"			"sourcemod"
+  		"user"				"DATABASE_USERNAME"
+  		"pass"				"DATABASE_PASSWORD"
+  		//"timeout"			"0"
+  		//"port"			"0"
+  	}
+
+  	"cidr_blocker"
+  	{
+  		"driver"			"default"
+  		"host"				"DATABASE_HOST"
+  		"database"			"DATABASE"
+  		"user"				"DATABASE_USERNAME"
+  		"pass"				"DATABASE_PASSWORD"
+  		//"timeout"			"0"
+  		//"port"			"0"
+  	}
+
+  	"storage-local"
+  	{
+  		"driver"			"sqlite"
+  		"database"			"sourcemod-local"
+  	}
+
+  	"clientprefs"
+  	{
+  		"driver"			"sqlite"
+  		"host"				"localhost"
+  		"database"			"clientprefs-sqlite"
+  		"user"				"root"
+  		"pass"				""
+  		//"timeout"			"0"
+  		//"port"			"0"
+
+  	}
+  }
+              </pre>
+            </b-collapse>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            <b-taglist attached>
+              <b-tag type="is-primary">Sourcemod</b-tag>
               <b-tag type="is-dark">Could not find driver "mysql"</b-tag>
             </b-taglist>
           </p>
