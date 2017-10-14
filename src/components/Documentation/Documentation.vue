@@ -17,7 +17,13 @@
                   General
                 </p>
                 <ul class="menu-list">
-                  <li>What is it</li>
+                  <li><router-link :to="{ name: 'Documentation/Introduction', params: {} }" exact-active-class="is-active">Introduction</router-link></li>
+                </ul>
+                <p class="menu-label">
+                  Setup
+                </p>
+                <ul class="menu-list">
+                  <li><router-link :to="{ name: 'Documentation/Setup/Installation', params: {} }" exact-active-class="is-active">Installation</router-link></li>
                 </ul>
               </aside>
             </div>

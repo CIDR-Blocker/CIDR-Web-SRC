@@ -14,11 +14,8 @@
         </div>
         <div class="navbar-menu" :class="{'is-active': navMenuActive}">
           <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">Doc</a>
-              <div class="navbar-dropdown is-boxed">
-                <router-link :to="{ name: 'Documentation', params: {} }" class="navbar-item" exact-active-class="is-active">Installation</router-link>
-              </div>
+            <div class="navbar-item">
+              <router-link :to="{ name: 'Documentation/Introduction', params: {} }" class="navbar-item" exact-active-class="is-active">Documentation</router-link>
             </div>
           </div>
         </div>
