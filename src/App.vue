@@ -24,13 +24,7 @@
         </div>
       </nav>
     </div>
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <keep-alive><router-view></router-view></keep-alive>
-        </div>
-      </div>
-    </section>
+    <keep-alive><router-view></router-view></keep-alive>
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
