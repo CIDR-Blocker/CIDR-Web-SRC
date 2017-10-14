@@ -17,7 +17,8 @@ Vue.use(Buefy, {
 
 Vue.use(VueAnalytics, {
   id: 'UA-68577666-4',
-  checkDuplicatedScript: true
+  checkDuplicatedScript: true,
+  router
 })
 
 Vue.config.productionTip = false
