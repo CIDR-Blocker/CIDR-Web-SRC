@@ -15,10 +15,14 @@ export default new Router({
       component: Index
     },
     {
-      path: '/Doc/:id',
+      path: '/Doc',
       component: Doc,
       children: [
-        {path: 'Installation', component: Installation}
+        {
+          path: 'Installation',
+          component: Installation,
+          name: 'Doc/Installation'
+        }
       ]
     }
   ]
