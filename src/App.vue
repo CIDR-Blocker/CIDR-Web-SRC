@@ -3,9 +3,7 @@
     <div class="container">
       <nav class="navbar is-transparent" role="navigation" aria-label="Main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href=".">
-            <img src="../static/favicon/favicon.png" />
-          </a>
+          <router-link :to="{ name: 'Index', params: {} }" class="navbar-item"><img src="../static/favicon/favicon.png" /></router-link>
           <button class="button navbar-burger" @click="navMenuActive = !navMenuActive">
             <span></span>
             <span></span>
