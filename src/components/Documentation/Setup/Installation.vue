@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="content">
+    <div class="content animated fadeIn">
       <h1>Installation</h1>
       <ol>
         <li>

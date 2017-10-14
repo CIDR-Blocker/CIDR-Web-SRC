@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="content">
+    <div class="content animated fadeIn">
       <h1>What it does</h1>
       <p>
         It start off with a connection callback, the plugin will try to find the user within the <code>cidr_whitelist</code> table, letting the user enter if found.
