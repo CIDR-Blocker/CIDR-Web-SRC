@@ -5,7 +5,7 @@
         <div class="container">
           <div class="columns">
             <div class="column is-one-third">
-              <h1 class="title">Documentation</h1>
+              <h1 class="title">Documentation (<em>WIP</em>)</h1>
               <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul>
                   <li><router-link :to="{ name: 'Index', params: {} }">CIDR Blocker</router-link></li>
