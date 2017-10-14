@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 
-import Doc from '@/components/Doc/Doc'
-import Installation from '@/components/Doc/Installation'
+import Documentation from '@/components/Documentation/Documentation'
+import Installation from '@/components/Documentation/Installation'
 
 Vue.use(Router)
 
@@ -15,13 +15,14 @@ export default new Router({
       component: Index
     },
     {
-      path: '/Doc',
-      component: Doc,
+      path: '/Documentation',
+      name: 'Documentation',
+      component: Documentation,
       children: [
         {
           path: 'Installation',
           component: Installation,
-          name: 'Doc/Installation'
+          name: 'Documentation/Installation'
         }
       ]
     }

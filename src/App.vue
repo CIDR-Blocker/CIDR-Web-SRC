@@ -17,7 +17,7 @@
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">Doc</a>
               <div class="navbar-dropdown is-boxed">
-                <router-link :to="{ name: 'Doc/Installation', params: {} }" class="navbar-item" exact-active-class="is-active">Installation</router-link>
+                <router-link :to="{ name: 'Documentation', params: {} }" class="navbar-item" exact-active-class="is-active">Installation</router-link>
               </div>
             </div>
           </div>
