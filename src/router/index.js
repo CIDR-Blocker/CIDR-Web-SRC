@@ -17,12 +17,11 @@ export default new Router({
     },
     {
       path: '/Documentation',
-      name: 'Documentation',
       component: Documentation,
       children: [
         {
           path: '',
-          name: 'Documentation/Introduction',
+          name: 'Documentation',
           component: Introduction
         },
         {

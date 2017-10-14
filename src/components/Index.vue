@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="container">
           <div class="columns">
-            <div class="column is-offset-5">
+            <div class="column has-text-centered">
               <img class="animated fadeInDown" src="/static/favicon/favicon.png" height="250" width="250" alt="CIDR Blocker" />
             </div>
           </div>

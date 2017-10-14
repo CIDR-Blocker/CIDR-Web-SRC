@@ -17,7 +17,7 @@
                   General
                 </p>
                 <ul class="menu-list">
-                  <li><router-link :to="{ name: 'Documentation/Introduction', params: {} }" exact-active-class="is-active">Introduction</router-link></li>
+                  <li><router-link :to="{ name: 'Documentation', params: {} }" exact-active-class="is-active">Introduction</router-link></li>
                 </ul>
                 <p class="menu-label">
                   Setup
