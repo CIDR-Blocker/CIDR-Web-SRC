@@ -28,7 +28,7 @@
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
-          Made by RumbleFrog
+          Made with <b-icon icon="heart"></b-icon> by <a href="https://github.com/RumbleFrog" target="_blank">RumbleFrog</a>
         </div>
       </div>
     </footer>
