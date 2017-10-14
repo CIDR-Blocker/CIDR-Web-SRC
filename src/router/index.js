@@ -5,6 +5,7 @@ import Index from '@/components/Index'
 import Documentation from '@/components/Documentation/Documentation'
 import Introduction from '@/components/Documentation/Introduction'
 import Installation from '@/components/Documentation/Setup/Installation'
+import Troubleshooting from '@/components/Documentation/Setup/Troubleshooting'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
           path: 'Installation',
           component: Installation,
           name: 'Documentation/Setup/Installation'
+        },
+        {
+          path: 'Troubleshooting',
+          component: Troubleshooting,
+          name: 'Documentation/Setup/Troubleshooting'
         }
       ]
     }

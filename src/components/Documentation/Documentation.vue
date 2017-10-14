@@ -24,6 +24,7 @@
                 </p>
                 <ul class="menu-list">
                   <li><router-link :to="{ name: 'Documentation/Setup/Installation', params: {} }" exact-active-class="is-active">Installation</router-link></li>
+                  <li><router-link :to="{ name: 'Documentation/Setup/Troubleshooting', params: {} }" exact-active-class="is-active">Troubleshooting</router-link></li>
                 </ul>
               </aside>
             </div>
