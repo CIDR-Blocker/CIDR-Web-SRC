@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <section class="hero animated fadeIn">
+    <section class="hero is-large animated fadeIn">
       <div class="hero-body">
         <div class="container">
           <div class="columns">
             <div class="column is-one-third">
-              <h1 class="title">Installation</h1>
+              <h1 class="title">Documentation</h1>
               <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul>
                   <li><router-link :to="{ name: 'Index', params: {} }">CIDR Blocker</router-link></li>
