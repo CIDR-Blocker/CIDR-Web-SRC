@@ -13,7 +13,9 @@
         <div class="navbar-menu" :class="{'is-active': navMenuActive}">
           <div class="navbar-start">
             <div class="navbar-item">
-              <router-link :to="{ name: 'Documentation', params: {} }" class="navbar-item" exact-active-class="is-active">Documentation</router-link>
+              <router-link :to="{ name: 'Documentation', params: {} }" class="navbar-item" exact-active-class="is-active">
+                <b-icon icon="file-text-o"></b-icon>&nbsp;<span>Documentation</span>
+              </router-link>
             </div>
           </div>
         </div>
