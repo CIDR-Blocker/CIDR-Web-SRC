@@ -143,6 +143,30 @@
           </div>
         </div>
       </div>
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            <b-taglist attached>
+              <b-tag type="is-primary">Discord</b-tag>
+              <b-tag type="is-dark">I need more help!</b-tag>
+            </b-taglist>
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p>
+              Before asking for help, please have <code>errors_%DATE%.log</code> ready, located in <code>tf/addons/sourcemod/logs</code>
+            </p>
+            <a href="https://discord.gg/gh8uMa9" target="_blank">
+              <b-taglist attached>
+                <b-tag type="is-black">Join</b-tag>
+                <b-tag type="is-info">Discord</b-tag>
+                <b-tag type="is-primary">gh8uMa9</b-tag>
+              </b-taglist>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
