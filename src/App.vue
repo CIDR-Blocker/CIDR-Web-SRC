@@ -24,24 +24,20 @@
         </div>
       </nav>
     </div>
-    <section class="hero is-fullheight">
+    <section class="hero">
       <div class="hero-body">
         <div class="container">
           <keep-alive><router-view></router-view></keep-alive>
         </div>
       </div>
-      <div class="hero-footer">
-        <div class="container">
-          <div class="tabs is-centered">
-            <ul>
-              <li>
-                Made by RumbleFrog
-              </li>
-            </ul>
-          </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          Made by RumbleFrog
         </div>
       </div>
-    </section>
+    </footer>
   </div>
 </template>
 
