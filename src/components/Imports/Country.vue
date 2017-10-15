@@ -12,13 +12,13 @@
       <h1 class="title">Pick Countries (Hold Ctrl to Pick Multiple)</h1>
       <b-field>
         <b-select multiple expanded v-model="selected_country" native-size="15">
-          <option v-for="country in meta" v-if="country.country_name != '' && isValid(country.country_name)" :value="country.geoname_id">
+          <option v-for="country in meta" v-if="country.country_name != ''" :value="country.geoname_id">
             {{ country.country_name }}
           </option>
         </b-select>
       </b-field>
       <b-field>
-        <button class="button is-primary" style="width:100%">Generate</button>
+        <button class="button is-primary" style="width:100%" @click="process()">Generate</button>
       </b-field>
     </div>
     <div v-if="!downloading && !parsing && processing">
@@ -33,6 +33,8 @@ import axios from 'axios'
 import JSZip from 'jszip'
 import Papa from 'papaparse'
 import _ from 'lodash'
+import squel from 'squel'
+import FileSaver from 'filesaver.js'
 export default {
   name: 'Country',
   data () {
@@ -92,16 +94,23 @@ export default {
           })
         })
     },
-    isValid (str) {
-      return /^[0-9a-zA-Z]+$/.test(str)
-    },
     process () {
       let out = []
-
       this.ipv4.forEach((block) => {
         if (this.selected_country.includes(block.registered_country_geoname_id)) {
           out.push({cidr: block.network, comment: this.dict[block.registered_country_geoname_id]})
         }
+      })
+      let SQL = squel
+                  .insert()
+                  .into('cidr_list')
+                  .setFieldsRows(out)
+                  .toString()
+      let blob = new Blob([SQL], {type: 'text/plain;charset=utf-8'})
+      FileSaver.saveAs(blob, 'country.sql')
+      this.$toast.open({
+        message: 'Successfully downloaded country import file',
+        type: 'is-success'
       })
     }
   }
