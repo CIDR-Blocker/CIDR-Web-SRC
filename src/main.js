@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Buefy from 'buefy'
-import VueAnalytics from 'vue-analytics'
 
 import 'bulma/css/bulma.css'
 import 'buefy/lib/buefy.css'
@@ -13,12 +12,6 @@ import 'animate.css/animate.css'
 
 Vue.use(Buefy, {
   defaultIconPack: 'fa'
-})
-
-Vue.use(VueAnalytics, {
-  id: 'UA-68577666-4',
-  checkDuplicatedScript: true,
-  router
 })
 
 Vue.config.productionTip = false
