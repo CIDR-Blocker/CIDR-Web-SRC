@@ -5,7 +5,7 @@
         <div class="container">
           <div class="columns">
             <div class="column has-text-centered">
-              <img class="animated fadeInDown" src="/static/favicon/favicon.png" height="250" width="250" alt="CIDR Blocker" />
+              <img class="animated fadeInDown" src="/static/favicon/favicon.png" height="250" width="250" alt="CIDR Blocker" style="margin-left:50px" />
             </div>
           </div>
           <div class="has-text-centered">

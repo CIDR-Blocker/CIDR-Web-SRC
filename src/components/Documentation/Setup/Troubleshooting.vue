@@ -17,7 +17,7 @@
           </p>
 
           <b-collapse :open="false">
-            <button class="button is-primary" slot="trigger">databases.cfg Example</button>
+            <button class="button is-primary" slot="trigger">databases.cfg example</button>
             <pre>
   "Databases"
   {
