@@ -21,7 +21,7 @@
               <a class="navbar-link">
                 <b-icon icon="cloud-upload"></b-icon>&nbsp;<span>Imports</span>
               </a>
-              <div class="navbar-dropdown">
+              <div class="navbar-dropdown is-boxed">
                 <router-link :to="{ name: 'Country', params: {} }" class="navbar-item" exact-active-class="is-active">Country</router-link>
               </div>
             </div>
