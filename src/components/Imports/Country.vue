@@ -106,7 +106,7 @@ export default {
                   .into('cidr_list')
                   .setFieldsRows(out)
                   .toString()
-      let blob = new Blob([SQL], {type: 'text/plain;charset=utf-8'})
+      let blob = new Blob([SQL], {type: 'application/sql;charset=utf-8'})
       FileSaver.saveAs(blob, 'country.sql')
       this.$toast.open({
         message: 'Successfully downloaded country import file',
