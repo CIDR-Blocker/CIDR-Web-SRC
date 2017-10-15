@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-medium">
+  <section class="hero">
     <div class="hero-body">
       <div class="container">
         <keep-alive><router-view></router-view></keep-alive>
