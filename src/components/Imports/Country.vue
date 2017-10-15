@@ -5,10 +5,10 @@
       <progress class="progress" :value="dl_progress" max="100">{{dl_progress}}%</progress>
     </div>
     <div v-if="!downloading && parsing">
-      <h1 class="title">Processing ...</h1>
+      <h1 class="title">Parsing ...</h1>
       <span class="fa fa-cog fa-spin fa-3x"></span>
     </div>
-    <div v-if="!downloading && !parsing">
+    <div v-if="!downloading && !parsing && !processing">
       <h1 class="title">Pick Countries (Hold Ctrl to Pick Multiple)</h1>
       <b-field>
         <b-select multiple expanded v-model="selected_country" native-size="15">
@@ -20,6 +20,10 @@
       <b-field>
         <button class="button is-primary" style="width:100%">Generate</button>
       </b-field>
+    </div>
+    <div v-if="!downloading && !parsing && processing">
+      <h1 class="title">Processing ...</h1>
+      <span class="fa fa-cog fa-spin fa-3x"></span>
     </div>
   </div>
 </template>
@@ -40,6 +44,7 @@ export default {
       data: null,
       ipv4: [],
       meta: [],
+      dict: {},
       selected_country: []
     }
   },
@@ -75,6 +80,9 @@ export default {
                     header: true,
                     complete: (results) => {
                       this.meta = _.sortBy(results.data, 'country_name')
+                      results.data.forEach((country) => {
+                        this.dict[country.geoname_id] = country.country_name
+                      })
                       this.parsing = false
                     }
                   })
@@ -86,6 +94,15 @@ export default {
     },
     isValid (str) {
       return /^[0-9a-zA-Z]+$/.test(str)
+    },
+    process () {
+      let out = []
+
+      this.ipv4.forEach((block) => {
+        if (this.selected_country.includes(block.registered_country_geoname_id)) {
+          out.push({cidr: block.network, comment: this.dict[block.registered_country_geoname_id]})
+        }
+      })
     }
   }
 }
