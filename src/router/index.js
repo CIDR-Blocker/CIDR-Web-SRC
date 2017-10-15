@@ -7,6 +7,9 @@ import Introduction from '@/components/Documentation/Introduction'
 import Installation from '@/components/Documentation/Setup/Installation'
 import Troubleshooting from '@/components/Documentation/Setup/Troubleshooting'
 
+import Imports from '@/components/Imports/Imports'
+import Country from '@/components/Imports/Country'
+
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +37,17 @@ export default new Router({
           path: 'Troubleshooting',
           component: Troubleshooting,
           name: 'Documentation/Setup/Troubleshooting'
+        }
+      ]
+    },
+    {
+      path: '/Imports',
+      component: Imports,
+      children: [
+        {
+          path: 'Country',
+          name: 'Country',
+          component: Country
         }
       ]
     }

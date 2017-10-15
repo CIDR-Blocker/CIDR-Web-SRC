@@ -17,6 +17,14 @@
                 <b-icon icon="file-text-o"></b-icon>&nbsp;<span>Documentation</span>
               </router-link>
             </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                <b-icon icon="cloud-upload"></b-icon>&nbsp;<span>Imports</span>
+              </a>
+              <div class="navbar-dropdown">
+                <router-link :to="{ name: 'Country', params: {} }" class="navbar-item" exact-active-class="is-active">Country</router-link>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
