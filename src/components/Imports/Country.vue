@@ -52,7 +52,7 @@ export default {
   },
   mounted () {
     // Unfortunately, MaxMind site has no cross-origin header, so we are unable to download directly
-    axios.get('/static/download/GeoLite2-Country-CSV.zip', {
+    axios.get(require('../../assets/archive/GeoLite2-Country-CSV.zip'), {
       crossdomain: true,
       responseType: 'blob', // JSZIP only takes in binary data, so we set the response as blob (binary)
       onDownloadProgress: (progressEvent) => {
