@@ -30,9 +30,7 @@
 
 <script>
 import axios from 'axios'
-import JSZip from 'jszip'
-import Papa from 'papaparse'
-import _ from 'lodash'
+import client from 'webpack-worker/client'
 import squel from 'squel'
 import FileSaver from 'filesaver.js'
 export default {
@@ -69,29 +67,14 @@ export default {
   },
   methods: {
     parse () {
-      let zip = new JSZip()
-      zip.loadAsync(this.data)
-        .then((zipContent) => {
-          zip.file('GeoLite2-Country-CSV_20171003/GeoLite2-Country-Blocks-IPv4.csv').async('string').then((data) => {
-            Papa.parse(data, {
-              header: true,
-              complete: (results) => {
-                this.ipv4 = results.data
-                zip.file('GeoLite2-Country-CSV_20171003/GeoLite2-Country-Locations-en.csv').async('string').then((data) => {
-                  Papa.parse(data, {
-                    header: true,
-                    complete: (results) => {
-                      this.meta = _.sortBy(results.data, 'country_name')
-                      results.data.forEach((country) => {
-                        this.dict[country.geoname_id] = country.country_name
-                      })
-                      this.parsing = false
-                    }
-                  })
-                })
-              }
-            })
-          })
+      client(new Worker('country.js'), {
+        data: this.data
+      })
+        .subscribe(progress => {
+          console.log(progress)
+        })
+        .then(result => {
+          console.log('got result')
         })
     },
     process () {

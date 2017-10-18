@@ -58,6 +58,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? 'index.html'
         : config.build.index,
       template: 'index.html',
+      excludeChunks: ['country'],
       inject: true,
       minify: {
         removeComments: true,
