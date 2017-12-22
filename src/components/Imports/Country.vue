@@ -33,6 +33,8 @@ import axios from 'axios'
 import client from 'webpack-worker/client'
 import squel from 'squel'
 import FileSaver from 'filesaver.js'
+import CountryWorker from '../../workers/country/index.worker.js'
+
 export default {
   name: 'Country',
   data () {
@@ -66,14 +68,19 @@ export default {
   },
   methods: {
     parse () {
-      client(new Worker('country.js'), {
+      client(new CountryWorker(), {
         data: this.data
       })
         .subscribe(progress => {
           console.log(progress)
         })
         .then(result => {
-          console.log('got result')
+          this.ipv4 = result.ipv4
+          this.meta = result.meta
+          this.dict = result.dict
+
+          this.parsing = false
+          this.process()
         })
     },
     process () {

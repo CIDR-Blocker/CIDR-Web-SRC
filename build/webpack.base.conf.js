@@ -10,8 +10,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: './src/main.js',
-    country: './src/workers/Country'
+    app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -29,6 +28,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.worker\.js$/,
+        use: { loader: 'worker-loader' }
+      },
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
