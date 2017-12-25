@@ -80,7 +80,6 @@ export default {
           this.dict = result.dict
 
           this.parsing = false
-          this.process()
         })
     },
     process () {

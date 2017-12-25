@@ -5,8 +5,10 @@ import _ from 'lodash'
 
 process((params, emit) => {
   const zip = new JSZip()
-  const countryBlocksZip = 'GeoLite2-Country-CSV_20171003/GeoLite2-Country-Blocks-IPv4.csv'
-  const countryLocationsZip = 'GeoLite2-Country-CSV_20171003/GeoLite2-Country-Locations-en.csv'
+
+  // Needs to be updated per binary update
+  const countryBlocksZip = 'GeoLite2-Country-CSV_20171205/GeoLite2-Country-Blocks-IPv4.csv'
+  const countryLocationsZip = 'GeoLite2-Country-CSV_20171205/GeoLite2-Country-Locations-en.csv'
 
   const parseFile = (zipFile) => {
     return zip
