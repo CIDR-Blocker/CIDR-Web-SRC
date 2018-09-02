@@ -156,7 +156,7 @@
           <p>
             Before asking for help, please have <code>errors_%DATE%.log</code> ready, located in <code>tf/addons/sourcemod/logs</code>
           </p>
-          <a href="https://discord.gg/gh8uMa9" target="_blank">
+          <a href="https://discord.gg/TZ4BsrQ" target="_blank">
             <b-taglist attached>
               <b-tag type="is-black">Join</b-tag>
               <b-tag type="is-info">Discord</b-tag>
